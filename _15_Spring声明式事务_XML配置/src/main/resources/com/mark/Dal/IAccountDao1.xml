@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace：命名空间和c#一致
+-->
+<mapper namespace="com.mark.Dal.IAccountDao1">
+
+    <update id="UpdateAccountById">
+        update T_ACCOUNT t set t.money = t.money + #{MONEY} where t.id = #{ID}
+    </update>
+
+    <select id="GetAccountList" resultType="com.mark.Models.AccountModel">
+        select * from T_ACCOUNT t
+    </select>
+</mapper>

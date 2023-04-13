@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--属性赋值-->
+    <bean class="com.mark.services.impl.UserServicesImpl" id="userServices" scope="singleton">
+        <property name="id" value="1"></property>
+        <property name="name" value="马文磊"></property>
+        <property name="dog" ref="dog"></property>
+        <property name="phones">
+            <list>
+                <value>1234</value>
+                <value>5678</value>
+                <value>5678</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--有参构造-->
+    <bean class="com.mark.services.impl.UserServicesImpl" id="usServices" scope="singleton">
+        <constructor-arg name="_id" value="1"></constructor-arg>
+        <constructor-arg name="_name" value="马文磊"></constructor-arg>
+        <constructor-arg name="_dog" ref="dog"></constructor-arg>
+        <constructor-arg name="_Phones">
+            <list>
+                <value>1234</value>
+                <value>5678</value>
+                <value>5678</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!--复杂类型-->
+    <bean class="com.mark.domain.User" id="user">
+        <property name="ID" value="1"></property>
+        <property name="NAME" value="马文磊"></property>
+        <property name="AGE" value="25"></property>
+        <property name="DOG" ref="dog"></property>
+        <property name="lisLOVE">
+            <list>
+                <value>I</value>
+                <value>LOVE</value>
+                <value>YOU</value>
+            </list>
+        </property>
+        <property name="lisDOG">
+            <list>
+                <ref bean="dog"></ref>
+                <ref bean="dog"></ref>
+                <ref bean="dog"></ref>
+            </list>
+        </property>
+        <property name="setSTR">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+                <value>set3</value>
+            </set>
+        </property>
+        <property name="dic">
+            <map>
+                <entry key="狗1" value-ref="dog"></entry>
+                <entry key="狗2" value-ref="dog"></entry>
+                <entry key="31" value-ref="dog"></entry>
+            </map>
+        </property>
+        <property name="arr">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </array>
+        </property>
+        <property name="prop">
+            <props>
+                <prop key="1">一</prop>
+                <prop key="2">二</prop>
+                <prop key="3">三</prop>
+                <prop key="3">11234</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--dog对象-->
+    <bean class="com.mark.domain.Dog" id="dog">
+        <property name="name" value="旺财"></property>
+        <property name="age" value="2"></property>
+    </bean>
+</beans>

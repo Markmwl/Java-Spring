@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--属性赋值-->
+    <bean class="com.mark.Models.User" id="user" scope="singleton">
+        <property name="id" value="#{1+100}"></property>
+        <property name="name" value="马文磊"></property>
+        <property name="dog" value="#{dog}"></property>
+        <property name="phones">
+            <list>
+                <value>1234</value>
+                <value>5678</value>
+                <value>5678</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--dog对象-->
+    <bean class="com.mark.Models.Dog" id="dog">
+        <property name="name" value="旺财"></property>
+        <property name="age" value="2"></property>
+    </bean>
+</beans>

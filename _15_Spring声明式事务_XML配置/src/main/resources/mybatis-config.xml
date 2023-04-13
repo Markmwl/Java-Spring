@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--因为原有配置已经在spring配置文件中引入，所以不需要在此处写一遍，可以在里边加别名等，文件可以为空-->
+    <!--加别名-->
+    <typeAliases>
+        <package name="com.mark.Models"></package>
+    </typeAliases>
+</configuration>

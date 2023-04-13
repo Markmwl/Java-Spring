@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:jdbc.xml"></import>
+
+    <bean class="com.mark.Models.User" id="user" init-method="init" destroy-method="close">
+        <property name="id" value="#{1+100}"></property>
+        <property name="name" value="马文磊"></property>
+    </bean>
+
+    <!--使用实例工厂-->
+    <bean class="com.mark.Factory_Car.CarFactory" id="carFactory"></bean>
+    <!--使用实例工厂创建car放入容器-->
+    <!--factory-bean：用来指定使用哪个工厂对象-->
+    <!--factory-method：用来指定使用工厂对象中的那个方法-->
+    <bean factory-bean="carFactory" factory-method="GetCarFactory" id="car"></bean>
+
+    <!--使用静态工厂-->
+    <bean class="com.mark.Factory_Car.CarStaticFactory" id="carStaticFactory" factory-method="GetCarStaticFactory"></bean>
+
+</beans>

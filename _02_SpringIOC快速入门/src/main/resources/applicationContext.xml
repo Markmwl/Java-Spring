@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    class:配置类的全类名
+    id:配置一个唯一标识
+    scope:设置单例或多例
+    -->
+    <bean class="com.mark.services.impl.UserServicesImpl" id="userServices" scope="singleton"></bean>
+</beans>

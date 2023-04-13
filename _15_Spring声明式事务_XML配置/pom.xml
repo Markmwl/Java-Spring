@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>_15_Spring声明式事务_XML配置</groupId>
+    <artifactId>_15_Spring声明式事务_XML配置</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+   <dependencies>
+       <!--AOP相关依赖-->
+       <dependency>
+           <groupId>org.aspectj</groupId>
+           <artifactId>aspectjweaver</artifactId>
+           <version>1.8.13</version>
+       </dependency>
+
+       <!--jdbc依赖-->
+       <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-jdbc</artifactId>
+           <version>5.1.9.RELEASE</version>
+       </dependency>
+
+       <!--mybatis整合到spring的整合包-->
+       <dependency>
+           <groupId>org.mybatis</groupId>
+           <artifactId>mybatis-spring</artifactId>
+           <version>2.0.4</version>
+       </dependency>
+
+       <dependency>
+           <!--导入MyBatis依赖-->
+           <groupId>org.mybatis</groupId>
+           <artifactId>mybatis</artifactId>
+           <version>3.5.5</version>
+       </dependency>
+
+       <!--Spring依赖-->
+       <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-context</artifactId>
+           <version>5.1.9.release</version>
+       </dependency>
+
+       <!--junit-->
+       <dependency>
+           <groupId>junit</groupId>
+           <artifactId>junit</artifactId>
+           <version>4.12</version>
+       </dependency>
+
+       <!--spring整合junit的依赖-->
+       <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-test</artifactId>
+           <version>5.1.9.RELEASE</version>
+       </dependency>
+
+       <!--oracle 依赖:-->
+       <dependency>
+           <!-- 由于oracle官方未授权，所以maven上无法直接下载ojdbc，需要自己下载，然后通过命令加载到本地maven库中
+mvn install:install-file -Dfile=D:\ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.1.0 -Dpackaging=jar -DgeneratePom=true-->
+           <groupId>com.oracle</groupId>
+           <artifactId>ojdbc6</artifactId>
+           <version>11.2.0.1.0</version>
+       </dependency>
+
+       <!--构造依赖-->
+       <dependency>
+           <groupId>org.projectlombok</groupId>
+           <artifactId>lombok</artifactId>
+           <version>1.18.20</version>
+       </dependency>
+   </dependencies>
+</project>

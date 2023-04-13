@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace：命名空间和c#一致
+-->
+<mapper namespace="com.mark.Dal.UserDao">
+    <!--数据库字段和java变量名称不一致则无法自动封装数据
+       * 给sql语句无法识别的字段起别名同java变量一致,缺点：每次查询都需要设置别名
+       * 使用sql片段，缺点：不灵活
+       * 使用ResultMap：
+            定义<resultMap>标签
+            在<select>中将 resultType 替换为 resultMap
+    -->
+
+    <!--resultMap
+       id:唯一标识
+       type：映射类型，支持别名
+    -->
+    <resultMap id="usermap" type="com.mark.Models.User">
+        <!--
+        id:表主键字段映射
+          column：表字段名  property：要映射的名称（类变量名）
+        result：表一般字段映射
+          column：表字段名  property：要映射的名称（类变量名）
+        -->
+        <!--<id column="" property=""/>-->
+        <result column="name" property="User_NAME" />
+    </resultMap>
+
+    <select id="selectUserAll" resultMap="usermap">
+        select * from 用户表
+    </select>
+</mapper>
